@@ -81,15 +81,15 @@ class DB
             $col=join("`,`",array_keys($array));
             $values=join("','",$array);
 
-            $sql="insert into $this->pdo (`{$col}`) values('{$values}')";
+            $sql="insert into $this->table (`{$col}`) values('{$values}')";
         }
-
+        echo $sql;
         return $this->pdo->exec($sql);
     }
 
     function del($id)
     {
-        $sql="delect from $this->tabel where ";
+        $sql="delect from $this->table where ";
         if(is_array($id))
         {
             foreach($id as $key => $val){
@@ -122,5 +122,7 @@ function dd($array){
 function to($url){
     header("location:".$url);
 }
+
+$Poster=new DB('poster');
 
 ?>
