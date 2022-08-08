@@ -8,8 +8,6 @@
     <div style="width:24.6%;text-align:center;background:#eee">操作</div>
 </div>
 <form action="./api/edit_poster.php" method="post">
-
-
 <div style="width:100%;height:210px;overflow:auto">
 <?php
 $rows=$Poster->all(" order by rank");
